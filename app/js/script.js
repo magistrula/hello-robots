@@ -1,3 +1,4 @@
+var DEFAULT_MESSAGE = 'Hello, Robots!';
 var DANCE_DATA = [
   { text: 'Everybody dance now!', color: '#FFFF66' },
   { text: 'Can\'t touch this!', color: '#FFFF66' },
@@ -6,7 +7,9 @@ var DANCE_DATA = [
   { text: 'Ughhhhhhhhhhhh...', color: '#FFCC99' }
 ];
 var PANIC_THRESHOLD = DANCE_DATA.length;
+var ROBOTS = ['robot0','robot1','robot2','robot3','robot4','robot5'];
 var danceCounter = 0;
+var robotCounter = 0;
 
 var charge = function () {
   setMessage('Fueling...');
@@ -30,6 +33,19 @@ var dance = function () {
 var panic = function () {
   setMessage('AUGHHHHHHH!!!!');
   setImageBackground('#FF4D4D');
+}
+
+var changeRobot = function () {
+  robotCounter++;
+  var robot = ROBOTS[robotCounter % ROBOTS.length];
+  document.getElementById('robot-image').src = 'img/' + robot + '.png';
+  resetRobot();
+}
+
+var resetRobot = function () {
+  setImageBackground('transparent');
+  setMessage(DEFAULT_MESSAGE);
+  danceCounter = 0;
 }
 
 var setMessage = function (text) {
