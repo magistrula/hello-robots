@@ -1,39 +1,35 @@
-var DANCE_MESSAGES = [
-  'Everybody dance now!',
-  'Can\'t touch this!',
-  'Livin\' la vida loca!',
-  'You danced me too many times.',
-  'Ughhhhhhhhhhhh...'
+var DANCE_DATA = [
+  { text: 'Everybody dance now!', color: '#FFFF66' },
+  { text: 'Can\'t touch this!', color: '#FFFF66' },
+  { text: 'Livin\' la vida loca!', color: '#FFFF66' },
+  { text: 'You danced me too many times.', color: '#E6E6E6' },
+  { text: 'Ughhhhhhhhhhhh...', color: '#FFCC99' }
 ];
-var TIRED_THRESHOLD = 3;
-var PANIC_THRESHOLD = DANCE_MESSAGES.length;
+var PANIC_THRESHOLD = DANCE_DATA.length;
 var danceCounter = 0;
 
 var charge = function () {
   setMessage('Fueling...');
-  setImageBackground('green');
+  setImageBackground('#5CD65C');
   danceCounter = 0;
 }
 
 var dance = function () {
+  var danceDatum;
+
   if (danceCounter >= PANIC_THRESHOLD) {
     panic();
-    return;
-  }
-
-  if (danceCounter >= TIRED_THRESHOLD) {
-    setImageBackground('gray');
   } else {
-    setImageBackground('yellow');
+    danceDatum = DANCE_DATA[danceCounter];
+    setImageBackground(danceDatum.color);
+    setMessage(danceDatum.text);
+    danceCounter++;
   }
-
-  setMessage(DANCE_MESSAGES[danceCounter]);
-  danceCounter++;
 }
 
 var panic = function () {
   setMessage('AUGHHHHHHH!!!!');
-  setImageBackground('red');
+  setImageBackground('#FF4D4D');
 }
 
 var setMessage = function (text) {
