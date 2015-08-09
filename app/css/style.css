@@ -1,0 +1,42 @@
+body {
+  background-color: silver;
+  font-family: TrebuchetMS, Arial, sans-serif;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.large-button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background-color: white;
+  width: 150px;
+  font-size: 22px;
+  margin: 0 10px;
+}
+
+.large-button:active {
+  background-color: lightblue;
+}
+
+.large-button:focus {
+  outline: none;
+}
+
+#image-container {
+  width: 600px;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+}
+
+#image-container img {
+  height: 350px;
+}
+
+#message {
+  margin: 20px auto;
+  font-size: 36px;
+  text-align: center;
+}
