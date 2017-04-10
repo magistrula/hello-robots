@@ -1,5 +1,8 @@
 ## Hello Robots
 
+### Purpose
+This is an instructional app whose purpose is to demonstrate how one might lay the foundation for the desired functionality then iterate on the design & the approach.
+
 ### Project Structure
 - There are 5 branches in this repository, each of which adds a little something to the app:
   - **01-buttons:** adds code to make the Charge, Dance, & Panic buttons work.
